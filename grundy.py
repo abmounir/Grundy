@@ -1,8 +1,8 @@
 def Grundy(dict_succ):
-	sommets=list(reversed(sorted(dict_succ.keys())))
-	g_dict={}
+	vertices=list(reversed(sorted(dict_succ.keys()))) #start from the last nodes of graph (nodes having no successors)
+	g_dict={} #grundy function dictionnary (of each node) 
 	g_list=[]
-	for k in sommets:
+	for k in vertices:
 		g_list=[]
 		l=[]
 		tmp_dic={}
@@ -33,7 +33,7 @@ def Grundy(dict_succ):
 							ind=m
 				g_list[ind]=jj
 				jj+=1
-			#print(g_list)		
+					
 			min_list=min(g_list)
 			g=g_list.index(min_list)
 			l.append(k)
